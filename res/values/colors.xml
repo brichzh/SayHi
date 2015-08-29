@@ -31,6 +31,7 @@
     <color name="dialog_txcontent">#2E2E2E </color>
     <color name="dialog_btncontent">#5B85A2 </color>
     <color name="blue">#3A5FCD</color>
+    <color name="light_blue">#5A95CB</color>
     <color name="deepblue">#104E8B</color>
     <color name="topmenutextcolor">#AEEEEE</color>
     <color name="red">#EE2C2C</color>
@@ -247,4 +248,11 @@
  <color name="style_divider_color">#C9C7CD</color>
  <color name="btn_bg">#2BB0E0</color>
  <color name="base_line">#f3f3f3</color>
+ 
+ <color name="light_gray">#969696</color>
+ <color name="lite_gray">#DDDDDD</color>
+ <color name="light_gray1">#D3D3D3</color>
+ <color name="light_gray2">#DADADA</color>
+ <color name="light_gray3">#E1E1E1</color>
+ <color name="darkwhite">#E6E6E6</color>
 </resources>

@@ -1,21 +1,125 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.startup.sayhi.view.DragLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/friend_circle"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffff" >
 
-    <include
-        android:id="@+id/title"
-        layout="@layout/friend_title" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="30dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@id/title" >
+        <RelativeLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:onClick="onShowProfile"
+             >
 
-        <ListView
+            <ImageView
+                android:id="@+id/headimg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_coner"
+                android:src="@drawable/defaulhead"
+                />
+
+            <TextView
+                android:id="@+id/nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="@id/headimg"
+                android:layout_toRightOf="@id/headimg"
+                android:layout_marginLeft="15dp"
+                android:text="Jayzhou"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/userinfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@id/nickname"
+                android:layout_toRightOf="@id/headimg"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="2dp"
+                android:text="网易.工程师"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </RelativeLayout>
+        <include
+            android:id="@+id/sidemenus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll1"
+            layout="@layout/sidemenu" />
+	</RelativeLayout>
+    
+    <com.startup.sayhi.view.MyRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee" >
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#009990" 
+            android:padding="5dp"
+            >
+
+			<TextView
+                android:id="@+id/me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="@string/me"
+                android:textColor="#ffffff"
+                android:textSize="18sp" 
+                android:clickable="true"
+                />
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/main_title"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+            <TextView 
+                android:id="@+id/company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/main_title"
+                android:textColor="#ffffff"
+                android:text="广州"
+                android:textSize="14sp" 
+                />
+            <TextView
+                android:id="@+id/post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:text="@string/post"
+                android:textColor="#ffffff"
+                android:textSize="18sp" 
+                android:clickable="true"
+                />
+        </RelativeLayout>
+
+		<com.startup.sayhi.view.XListView
             android:id="@+id/friend_list"
+            android:layout_below="@id/rl_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -23,16 +127,15 @@
             android:divider="#ebebec"
             android:scrollbars="none"
             android:dividerHeight="1px" />
-    </LinearLayout>
-    <!--
-         <ListView
-        android:id="@+id/friend_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:divider="#ebebec"
-        android:background="@color/white"
-        android:cacheColorHint="@color/white"
-        android:dividerHeight="1px" />    -->
-
-</RelativeLayout>
+		
+        <TextView
+            android:id="@+id/iv_notopic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:text="@string/topic_tips"
+            android:visibility="gone" />
+    </com.startup.sayhi.view.MyRelativeLayout>
+	
+</com.startup.sayhi.view.DragLayout>
